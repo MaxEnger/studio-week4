@@ -1,71 +1,30 @@
-<!DOCTYPE html>
 <html>
-
 <head>
   <title>A Leaflet map!</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
- <style>
+  <link rel="stylesheet" href="./Leaflet-1.0.3/leaflet.css"/>
+  <script src="./Leaflet-1.0.3/leaflet.js"></script>
+  <style>
     #map{ height: 100% }
   </style>
-
-  
 </head>
-
 <body>
-  <h1>Studio Week 4 <br> Boston Rat Map </h1>
-  <!-- Add multiple pages to web page-->
-  <!-- active class displays the grey box around current page-->
-  <ul>
-  	<li><a class="active" href="index.html" target="_self">Output 1</a></li>
-    <li><a href="mapbox.html" target="_self">Output 2</a></li>
-    <li><a href="wildfire.html" target="_self">Output 3</a></li>
-  </ul>
-  <br>
 
-  <!-- Add a div to give the map somewhere to go -->
-  <div id='map'></div>
+  <div id="map"></div>
 
   <script>
-  // Create a variable called "map" to house your map
+
   // initialize the map
   var map = L.map('map').setView([42.35, -71.08], 13);
 
   // load a tile layer
   L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
-          {
-            attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-            maxZoom: 17,
-            minZoom: 9
-          }).addTo(map);
-
-  // bike lanes
-  L.tileLayer('http://tiles.mapc.org/trailmap-onroad/{z}/{x}/{y}.png',
-          {
-            maxZoom: 17,
-            minZoom: 9
-          }).addTo(map);
-
- $.getJSON("neighborhoods.geojson",function(hoodData){
-  L.geoJson( hoodData ).addTo(map);
-}); 
-
-$.getJSON("rodents.geojson",function(data){
-  var ratIcon = L.icon({
-    iconUrl: 'rat.png',
-    iconSize: [60,50]
-  });
-  L.geoJson(data,{
-    pointToLayer: function(feature,latlng){
-      var marker = L.marker(latlng,{icon: ratIcon});
-      marker.bindPopup(feature.properties.Location + '<br/>' + feature.properties.OPEN_DT);
-      return marker;
-    }
-  }).addTo(map);
-});
+    {
+      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+      maxZoom: 17,
+      minZoom: 9
+    }).addTo(map);
 
   </script>
 </body>
 </html>
+	
