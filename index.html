@@ -25,7 +25,21 @@
       maxZoom: 17,
       minZoom: 9
     }).addTo(map);
-
+    
+// load GeoJSON from an external file
+  $.getJSON("rodents.geojson",function(data){
+    var ratIcon = L.icon({
+      iconUrl: 'http://andywoodruff.com/maptime-leaflet/rat.png',
+      iconSize: [60,50]
+    });
+    L.geoJson(data,{
+      pointToLayer: function(feature,latlng){
+        var marker = L.marker(latlng,{icon: ratIcon});
+        marker.bindPopup(feature.properties.Location + '<br/>' + feature.properties.OPEN_DT);
+        return marker;
+      }
+    }).addTo(map);
+  });
   </script>
 </body>
 </html>
