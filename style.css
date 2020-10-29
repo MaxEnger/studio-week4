@@ -19,7 +19,7 @@ li:last-child {
 li a {
  display: block;
  color: black;
- text-align: left;
+ text-align: center;
  padding: 15px 17px;
  text-decoration: none;
 }
