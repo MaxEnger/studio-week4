@@ -2,15 +2,15 @@ ul {
  list-style-type: none;
  padding: 1px;
  overflow: hidden;
- background-color: #EFC3A5;
- font-family: tahoma;
- font-size: 75%;
+ background-color: #b0f5ec;
+ font-family: "Lucida Console", Courier, monospace;
+ font-size: 65%;
  font-weight: bold;
 }
 
 li {
  float: left;
- border-right: 1px solid white;
+ border-right: 1px solid grey;
 }
 
 /* Add a border to all( but not the last) list items */
@@ -28,18 +28,18 @@ li a {
 
 /* Links will change color when hovered over */
 li a:hover {
- background-color: #AFAFAF;
+ background-color: #b88c8c;
 }
 
 .active {
- background-color: #AFAFAF;
+ background-color: #b88c8c;
 }
 
 /* Font */
 h1 {
   text-align: center;
-  color: white;
-  font-family: tahoma;
+  color: #b88c8c;
+  font-family: "Lucida Console", Courier, monospace;
   font-size: 230%;
   line-height: 0.5;
   padding-top: 1%
@@ -47,15 +47,15 @@ h1 {
 
 h2 {
   text-align: center;
-  color: white;
-  font-family: tahoma;
+  color: #b88c8c;
+  font-family: "Lucida Console", Courier, monospace;
   font-size: 150%;
 }
 
 p {
   text-align: center;
-  color: white;
-  font-family: tahoma;
+  color: #b88c8c;
+  font-family: "Lucida Console", Courier, monospace;
   font-size: 80%;
 }
 
