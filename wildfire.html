@@ -124,7 +124,7 @@ map.on('load', function() {
 
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['perimeters_100-2e5ws4']
+    layers: ['perimeters_100']
   });
 
   if (!features.length) {
@@ -140,12 +140,12 @@ map.on('click', function(e) {
 });
  
 // Change the cursor to a pointer when the mouse is over the states layer.
-map.on('mouseenter', 'perimeters_100-2e5ws4', function () {
+map.on('mouseenter', 'perimeters_100-', function () {
 map.getCanvas().style.cursor = 'pointer';
 });
  
 // Change it back to a pointer when it leaves.
-map.on('mouseleave', 'perimeters_100-2e5ws4', function () {
+map.on('mouseleave', 'perimeters_100', function () {
 map.getCanvas().style.cursor = '';
 });
 
