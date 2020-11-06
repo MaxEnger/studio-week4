@@ -76,7 +76,7 @@
 
 <body>
 <h1>Max Enger, Studio Week 4</h1> 
-  <h2>Producing a Mapbox Product to show Store Front Locations in Central CA</h2>
+  <h2>Wildfire's with Pop-ups</h2>
  
   <div class="container">
     <div class="center">
@@ -107,10 +107,10 @@
     //Mapbox token 
     mapboxgl.accessToken = 'pk.eyJ1IjoibWVuZ2VyMSIsImEiOiJja2c4MTNrYXcwY3kyMnRyd2o4bmk3MXViIn0.95qsNWKiUizVcqHK1qwr4g';//Mapbox token 
     var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
-      center: [-122.411464, 37.7852299], // starting position
-      zoom: 10,// starting zoom
+      container: 'map', 
+      style: 'mapbox://styles/menger1/ckh6kchmx01ck19qfaj44f43z', 
+      center: [-96.350098,38.151837],
+      zoom: 4
       transformRequest: transformRequest
     });
 
@@ -125,8 +125,8 @@
 
       function makeGeoJSON(csvData) {
         csv2geojson.csv2geojson(csvData, {
-          latfield: 'Latitude',
-          lonfield: 'Longitude',
+          latfield: 'lat',
+          lonfield: 'lon',
           delimiter: ','
         }, function (err, data) {
           map.on('load', function () {
@@ -154,7 +154,7 @@
               //set popup text 
               //You can adjust the values of the popup to match the headers of your CSV. 
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV. 
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Address + `</h4>` + `<h4>` + `<b>` + `Phone: ` + `</b>` + e.features[0].properties.Phone + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.FIRE_YEAR + `</h3>` + `<h4>` + `<b>` + `Acres: ` + `</b>` + e.features[0].properties.GIS_ACRES + `</h4>` + `<h4>` + `<b>` + `Incident: ` + `</b>` + e.features[0].properties.INCIDENT + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
