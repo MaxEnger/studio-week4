@@ -62,9 +62,13 @@
       height: 10px;
       margin-right: 5px;
     }
-    .mapboxgl-popup {
-      max-width: 400px;
-      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  #popup {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        opacity: 0.8;
+        background-color: white;
     }
     
   </style>
@@ -89,6 +93,7 @@
   <div id='map'></div>
   <div class='map-overlay' id='legend'></div>
   <div class="map-overlay" id="features">
+  <div id="popup"></div>
 
   <script>
 
