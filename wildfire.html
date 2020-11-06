@@ -68,6 +68,16 @@
     });
 
 map.on('load', function() {
+  
+   map.getCanvas().style.cursor = 'default';
+
+   map.fitBounds([
+          [-133.2421875, 16.972741],
+          [-47.63671875, 52.696361]
+        ]);
+
+   map.getCanvas().style.cursor = 'default';
+  
   var layers = ['0-100524', '100524-200000', '200000-400000','500000+'];
   var colors = ['#f8b435', '#cb6715', '#e31c1c', '#181716'];
   
@@ -85,8 +95,6 @@ map.on('load', function() {
   item.appendChild(value);
   legend.appendChild(item);
 }
-  map.getCanvas().style.cursor = 'default';
-  map.fitBounds([[-120.2421875, 10.972741], [-65.63671875, 46.696361]]);
 
 });
     
