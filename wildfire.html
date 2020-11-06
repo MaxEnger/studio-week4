@@ -87,8 +87,7 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoibWVuZ2VyMSIsImEiOiJja2c4MTNrYXcwY3kyMnRyd2o4bmk3MXViIn0.95qsNWKiUizVcqHK1qwr4g';//Mapbox token 
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/menger1/ckh6dsslg10f719mk8ii2gzqu', //stylesheet location
-      zoom: 5
+      style: 'mapbox://styles/menger1/ckh6dsslg10f719mk8ii2gzqu'
     });
 
 map.on('load', function() {
@@ -96,13 +95,13 @@ map.on('load', function() {
    map.getCanvas().style.cursor = 'default';
 
    map.fitBounds([
-          [-133.2421875, 16.972741],
-          [-47.63671875, 52.696361]
+          [-144.228516,23.039298],
+          [-60.600586,55.229023]
         ]);
 
    map.getCanvas().style.cursor = 'default';
   
-  var layers = ['0-100524', '100524-200000', '200000-400000','500000+'];
+  var layers = ['0-100,524', '100,524-200,000', '200,000-400,000','500,000+'];
   var colors = ['#f8b435', '#cb6715', '#e31c1c', '#181716'];
   
   //create legend
