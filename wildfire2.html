@@ -117,8 +117,7 @@
     $(document).ready(function () {
       $.ajax({
         type: "GET",
-        //YOUR TURN: Replace with csv export link
-        url:'https://docs.google.com/spreadsheets/d/1gkivKbkW5-4EQ2GC9QnICrkv9ZX2oXa_ACB_d4MCq9w/gviz/tq?tqx=out:csv&sheet=perimeters_100_final'
+        url:'https://docs.google.com/spreadsheets/d/1gkivKbkW5-4EQ2GC9QnICrkv9ZX2oXa_ACB_d4MCq9w/gviz/tq?tqx=out:csv&sheet=perimeters_100_final',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
