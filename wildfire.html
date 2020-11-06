@@ -57,6 +57,10 @@
       height: 10px;
       margin-right: 5px;
     }
+    .mapboxgl-popup {
+      max-width: 400px;
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
     
   </style>
   <link rel="stylesheet" href="style.css">
@@ -116,8 +120,26 @@ map.on('load', function() {
   item.appendChild(value);
   legend.appendChild(item);
 }
+});  
 
+map.on('click', 'perimeters_100-2e5ws4', function (e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML(e.features[0].properties.FIRE_YEAR)
+.addTo(map);
 });
+ 
+// Change the cursor to a pointer when the mouse is over the states layer.
+map.on('mouseenter', 'perimeters_100-2e5ws4', function () {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'perimeters_100-2e5ws4', function () {
+map.getCanvas().style.cursor = '';
+});
+
+
     
     
     
