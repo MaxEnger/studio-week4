@@ -124,7 +124,6 @@ map.on('load', function() {
 
 map.on('click', 'perimeters_100-2e5ws4', function (e) {
 new mapboxgl.Popup()
-.setLngLat(e.lngLat)
 .setHTML(e.features[0].properties.FIRE_YEAR)
 .addTo(map);
 });
